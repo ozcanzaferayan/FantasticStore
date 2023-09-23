@@ -1,5 +1,6 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Dimensions, Platform, StyleSheet, Text, View } from "react-native";
 import React from "react";
+import { isPhone } from "../utils/isSpecificDevice";
 
 const Header = () => {
   return (
@@ -13,6 +14,7 @@ export default Header;
 
 const styles = StyleSheet.create({
   headerText: {
+    textAlign: isPhone ? "left" : "center",
     padding: 16,
     fontSize: 32,
     fontFamily: "Poppins-Semibold",

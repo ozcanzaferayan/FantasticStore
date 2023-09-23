@@ -18,7 +18,8 @@
     "@expo/webpack-config": "^19.0.0",
     "react-native-safe-area-context": "4.6.3",
     "expo-font": "~11.4.0",
-    "expo-splash-screen": "~0.20.5"
+    "expo-splash-screen": "~0.20.5",
+    "@types/react": "~18.2.14"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"

@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
   productBox: {
     flex: 1,
     padding: 16,
-    gap: 0,
+    gap: 4,
     backgroundColor: "white",
     shadowColor: "gray",
     shadowOffset: { width: 0, height: 8 },
@@ -51,9 +51,8 @@ const styles = StyleSheet.create({
     color: "gray",
   },
   productImage: {
-    alignSelf: "center",
-    width: 80,
-    height: 80,
+    width: "100%",
+    height: 100,
     resizeMode: "contain",
   },
   priceBox: {

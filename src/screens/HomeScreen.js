@@ -10,6 +10,7 @@ import {
 import Product from "../components/Product";
 import { FlatList } from "react-native";
 import Header from "../components/Header";
+import { isPhone } from "../utils/isSpecificDevice";
 
 export default function HomeScreen() {
   const products = [
@@ -84,7 +85,7 @@ export default function HomeScreen() {
         data={products}
         renderItem={({ item }) => <Product product={item} />}
         keyExtractor={(item) => item.title}
-        numColumns={Platform.OS === "web" ? 3 : 2}
+        numColumns={isPhone ? 2 : 3}
       />
     </SafeAreaView>
   );
