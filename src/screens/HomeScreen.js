@@ -1,114 +1,90 @@
 import { StatusBar } from "expo-status-bar";
-import { Image, SafeAreaView, StyleSheet, Text, View } from "react-native";
+import {
+  Image,
+  Platform,
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
 import Product from "../components/Product";
 import { FlatList } from "react-native";
+import Header from "../components/Header";
 
 export default function HomeScreen() {
   const products = [
     {
-      title: "One Ring",
-      subtitle: "LOTR",
-      price: 1000000,
-      image: require("../images/one_ring.png"),
-    },
-    {
-      title: "Book",
-      subtitle: "Jumanji",
-      price: 2000000,
-      image: require("../images/jumanji.jpeg"),
-    },
-    {
-      title: "Wand",
-      subtitle: "Harry Potter",
-      price: 500000,
-      image: require("../images/wand.png"),
+      title: "Lightsaber",
+      subtitle: "Star Wars",
+      image: require("../images/lightsaber.png"),
+      price: "10000000",
     },
     {
       title: "One Ring",
-      subtitle: "LOTR",
-      price: 1000000,
-      image: require("../images/one_ring.png"),
+      subtitle: "The Lord of the Rings",
+      image: require("../images/one-ring.png"),
+      price: "1000000",
     },
     {
-      title: "Book",
-      subtitle: "Jumanji",
-      price: 2000000,
-      image: require("../images/jumanji.jpeg"),
+      title: "Hoverboard",
+      subtitle: "Back to the Future II",
+      image: require("../images/hoverboard.png"),
+      price: "2500000",
     },
     {
-      title: "Wand",
+      title: "Ecto-1",
+      subtitle: "Ghostbusters",
+      image: require("../images/ecto-1.png"),
+      price: "50000",
+    },
+    {
+      title: "The Tesseract",
+      subtitle: "The Avengers",
+      image: require("../images/tesseract.png"),
+      price: "100000000",
+    },
+    {
+      title: "Golden Snitch",
       subtitle: "Harry Potter",
-      price: 500000,
-      image: require("../images/wand.png"),
+      image: require("../images/golden-snitch.png"),
+      price: "500000",
     },
     {
-      title: "One Ring",
-      subtitle: "LOTR",
-      price: 1000000,
-      image: require("../images/one_ring.png"),
+      title: "DeLorean Time Machine",
+      subtitle: "Back to the Future",
+      image: require("../images/delorean-time-machine.png"),
+      price: "1500000",
     },
     {
-      title: "Book",
-      subtitle: "Jumanji",
-      price: 2000000,
-      image: require("../images/jumanji.jpeg"),
+      title: "Ark of the Covenant",
+      subtitle: "Indiana Jones and the Raiders of the Lost Ark",
+      image: require("../images/ark-of-the-covenant.png"),
+      price: "500000000",
     },
     {
-      title: "Wand",
-      subtitle: "Harry Potter",
-      price: 500000,
-      image: require("../images/wand.png"),
+      title: "Infinity Gauntlet",
+      subtitle: "Avengers: Infinity War/Endgame",
+      image: require("../images/infinity-gauntlet.png"),
+      price: "1000000000",
     },
     {
-      title: "One Ring",
-      subtitle: "LOTR",
-      price: 1000000,
-      image: require("../images/one_ring.png"),
-    },
-    {
-      title: "Book",
-      subtitle: "Jumanji",
-      price: 2000000,
-      image: require("../images/jumanji.jpeg"),
-    },
-    {
-      title: "Wand",
-      subtitle: "Harry Potter",
-      price: 500000,
-      image: require("../images/wand.png"),
-    },
-    {
-      title: "One Ring",
-      subtitle: "LOTR",
-      price: 1000000,
-      image: require("../images/one_ring.png"),
-    },
-    {
-      title: "Book",
-      subtitle: "Jumanji",
-      price: 2000000,
-      image: require("../images/jumanji.jpeg"),
-    },
-    {
-      title: "Wand",
-      subtitle: "Harry Potter",
-      price: 500000,
-      image: require("../images/wand.png"),
+      title: "Maltese Falcon",
+      subtitle: "The Maltese Falcon",
+      image: require("../images/maltese-falcon.png"),
+      price: "10000000",
     },
   ];
   return (
     <SafeAreaView style={styles.safeArea}>
       <StatusBar style="auto" />
-      <Text style={styles.headerText}>
-        <Text style={styles.headerBoldText}>Power</Text> at your Doorstep
-      </Text>
+      <Header />
       <FlatList
         contentContainerStyle={styles.container}
+        columnWrapperStyle={styles.columnWrapper}
         data={products}
         renderItem={({ item }) => <Product product={item} />}
         keyExtractor={(item) => item.title}
-        numColumns={2}
-        columnWrapperStyle={styles.columnWrapper}
+        numColumns={Platform.OS === "web" ? 3 : 2}
       />
     </SafeAreaView>
   );
@@ -121,25 +97,11 @@ const styles = StyleSheet.create({
   container: {
     padding: 16,
     gap: 16,
+    alignSelf: "center",
+    maxWidth: 800,
+    width: "100%",
   },
   columnWrapper: {
     gap: 16,
-  },
-  headerText: {
-    padding: 16,
-    fontSize: 32,
-    fontFamily: "Poppins-Semibold",
-  },
-  headerBoldText: {
-    color: "tomato",
-  },
-  productBox: {},
-  productImage: {
-    width: 100,
-    height: 100,
-  },
-  priceBox: {
-    flexDirection: "row",
-    justifyContent: "space-between",
   },
 });

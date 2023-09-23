@@ -45,8 +45,9 @@ const styles = StyleSheet.create({
     marginTop: 8,
   },
   movie: {
-    fontSize: 18,
-    fontFamily: "Poppins-Semibold",
+    flex: 1,
+    fontSize: 16,
+    fontFamily: "Poppins-Medium",
     color: "gray",
   },
   productImage: {
