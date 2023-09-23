@@ -37,6 +37,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.1,
     shadowRadius: 4,
     borderRadius: 16,
+    elevation: 5,
   },
   productName: {
     fontSize: 22,
